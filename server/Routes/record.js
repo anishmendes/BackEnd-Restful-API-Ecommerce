@@ -41,3 +41,23 @@ recordRoutes.route("/listings/recordSwipe").post(function (req, res) {
         }
       });
   });
+  // This section will help you update a document by id.
+recordRoutes.route("/listings/updateLike").post(function (req, res) {
+    const dbConnect = dbo.getDb();
+    const listingQuery = { _id: req.body.id };
+    const updates = {
+      $inc: {
+        likes: 1
+      }
+    };
+  
+    dbConnect
+      .collection("listingsAndReviews")
+      .updateOne(listingQuery, updates, function (err, _result) {
+        if (err) {
+          res.status(400).send(`Error updating likes on listing with id ${listingQuery.id}!`);
+        } else {
+          console.log("1 document updated");
+        }
+      });
+  });
