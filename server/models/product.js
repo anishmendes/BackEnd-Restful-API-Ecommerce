@@ -14,10 +14,10 @@ const productSchema = new mongoose.Schema({
       required: true 
     },
 
-  company: {
-     type: String, 
-    required: true 
-  },
+  // company: {
+  //    type: String, 
+  //   required: true 
+  // },
 
   price: { 
     type: Number, 
@@ -38,9 +38,20 @@ const productSchema = new mongoose.Schema({
      type: String,
       required: true
      },
-     category: { type: String, required: true },
-     featured: { type: Boolean, default: false },
-     shipping: { type: Boolean, default: false }
+     category: {
+       type: String,
+        required: true 
+      },
+
+     featured: {
+       type: Boolean,
+        default: false 
+      },
+        
+     shipping: {
+       type: Boolean,
+        default: false
+       }
 
 })
 
