@@ -43,3 +43,7 @@ const productSchema = new mongoose.Schema({
      shipping: { type: Boolean, default: false }
 
 })
+
+const Product = mongoose.model('Product', productSchema);
+
+module.exports = Product;
