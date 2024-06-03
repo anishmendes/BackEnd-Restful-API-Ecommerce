@@ -9,5 +9,19 @@ const productSchema = new mongoose.Schema({
       unique: true 
     },
 
-    
+    name: { 
+      type: String, 
+      required: true 
+    },
+
+  company: {
+     type: String, 
+    required: true 
+  },
+
+  price: { 
+    type: Number, 
+    required: true 
+  },
+  
 })
