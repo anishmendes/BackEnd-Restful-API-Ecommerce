@@ -8,5 +8,5 @@ mongoose.connect("mongodb://localhost:27017/pickle" , {
 }).then(() => {
     console.log("connection sucessful");
 }).catch((e) => {
-    console.log("Connection Failed")
+    console.log("Trying to Connect but Failed")
 })
