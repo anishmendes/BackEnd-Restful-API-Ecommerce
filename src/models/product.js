@@ -1,27 +1,21 @@
 const express = require("express");
 const mongoose = require('mongoose');
 
+
+
 const productSchema = new mongoose.Schema({
 
 
-  //id for the product
   id: { type: String, required: true },
-    //name of the product
+
     name: { type: String, required: true },
 
-  // company: {
-  //    type: String, 
-  //   required: true 
-  // },
 
 
   //price for the product
   price: { type: Number, required: true },
 
-  // colors: {
-  //    type: [String],
-  //     required: true
-  //    },
+ 
 
   //image of the pickles 
   image: { type: String, required: true },
