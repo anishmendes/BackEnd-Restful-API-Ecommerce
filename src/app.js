@@ -33,6 +33,18 @@ app.get("/product", async (req, res) =>{
     }
     })
 
+    // we will handle get req of single 
+
+    app.get("/product/:id" , async (req, res) =>{
+        try {
+            const _id = req.params.id;
+            const getProduct = await Product.findById({_id});
+            res.send(getProduct);
+        } catch (e) {
+            res.send(400).send(e);
+        }
+    })
+
 
 app.get ("/", async (req, res)  => {
     res.send("Hello from Anish Dai");
