@@ -24,6 +24,7 @@ try {
     res.status(400).send(e)
 }
 })
+
 app.get("/product", async (req, res) =>{
     try {
      const getProduct = await Product.find({});
@@ -44,6 +45,8 @@ app.get("/product", async (req, res) =>{
             res.send(400).send(e);
         }
     })
+
+
     // we will handle patch  req of single 
 
     app.patch("/product/:id" , async (req, res) =>{
@@ -52,6 +55,17 @@ app.get("/product", async (req, res) =>{
             const getProduct = await Product.findByIdAndUpdate(_id, req.body, {
                 new:true
             });
+            res.send(getProduct);
+        } catch (e) {
+            res.send(500).send(e);
+        }
+    })
+    // we will handle delete req of single 
+
+    app.delete("/product/:id" , async (req, res) =>{
+        try {
+        
+            const getProduct = await Product.findByIdAndDelete(req.params.id);
             res.send(getProduct);
         } catch (e) {
             res.send(500).send(e);
