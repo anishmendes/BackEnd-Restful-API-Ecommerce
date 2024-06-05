@@ -44,6 +44,19 @@ app.get("/product", async (req, res) =>{
             res.send(400).send(e);
         }
     })
+    // we will handle patch  req of single 
+
+    app.patch("/product/:id" , async (req, res) =>{
+        try {
+            const _id = req.params.id;
+            const getProduct = await Product.findByIdAndUpdate(_id, req.body, {
+                new:true
+            });
+            res.send(getProduct);
+        } catch (e) {
+            res.send(500).send(e);
+        }
+    })
 
 
 app.get ("/", async (req, res)  => {
