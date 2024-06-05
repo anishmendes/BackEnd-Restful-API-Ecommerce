@@ -19,11 +19,19 @@ try {
      
     console.log(req.body);
     const insertProducts = await addingProducts.save();
-    res.send(insertProducts);
+    res.status(201).send(insertProducts);
 } catch (e) {
-    res.send(e)
+    res.status(400).send(e)
 }
 })
+app.get("/product", async (req, res) =>{
+    try {
+     const getProduct = await Product.find({});
+        res.send(getProduct);
+    } catch (e) {
+        res.status(400).send(e);
+    }
+    })
 
 
 app.get ("/", async (req, res)  => {
