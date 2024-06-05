@@ -1,21 +1,13 @@
-
+const express = require("express");
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
 
 
   //id for the product
-  id: { 
-    type: String,
-     required: true,
-      unique: true 
-    },
-
+  id: { type: String, required: true },
     //name of the product
-    name: { 
-      type: String, 
-      required: true 
-    },
+    name: { type: String, required: true },
 
   // company: {
   //    type: String, 
@@ -24,10 +16,7 @@ const productSchema = new mongoose.Schema({
 
 
   //price for the product
-  price: { 
-    type: Number, 
-    required: true 
-  },
+  price: { type: Number, required: true },
 
   // colors: {
   //    type: [String],
@@ -35,28 +24,19 @@ const productSchema = new mongoose.Schema({
   //    },
 
   //image of the pickles 
-  image: {
-     type: String,
-      required: true 
-    },
+  image: { type: String, required: true },
 
 
   //desc of the each pickle 
-  description: {
-     type: String,
-      required: true
-     },
+  description: { type: String, required: true },
 
      //chact of the each pickle it gonna be either veg or nonveg 
-     category: {
-       type: String,
-        required: true 
-      },
+     category: { type: String, required: true },
 
-    //  featured: {
-    //    type: Boolean,
-    //     default: false 
-    //   },
+     featured: {
+       type: Boolean,
+        default: false 
+      },
         
 
     //shipped of add to cart 
@@ -67,6 +47,9 @@ const productSchema = new mongoose.Schema({
 
 })
 
-const Product = mongoose.model('Product', productSchema);
+
+//we are creating a new collection 
+
+const Product =  mongoose.model('Product', productSchema);
 
 module.exports = Product;

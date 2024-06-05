@@ -8,7 +8,7 @@ const conn = async() => {
          
         await mongoose.connect("mongodb+srv://anishmainali31:18dec@cluster0.vtm5dho.mongodb.net/Aachar").then(
             () => {
-            console.log("Connected");
+            console.log("Succesfully Connected");
         },
         (error) => {
             console.log(error);
