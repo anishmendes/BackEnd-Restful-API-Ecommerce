@@ -18,7 +18,8 @@ try {
     const addingProducts = new Product(req.body) 
      
     console.log(req.body);
-    addingProducts.save();
+    const insertProducts = await addingProducts.save();
+    res.send(insertProducts);
 } catch (e) {
     res.send(e)
 }
