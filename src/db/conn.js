@@ -1,7 +1,7 @@
 const mongoose = require('mongooose');
 require("../src/db/conn");
 
-mongoose.connect("mongodb://localhost:27017/pickle" , {
+mongoose.connect("mongodb://127.0.0.1:27017/pickle" , {
     useCreateIndex:true,
     useNewUrlParser:true,
     useUnifiedTopology:true
