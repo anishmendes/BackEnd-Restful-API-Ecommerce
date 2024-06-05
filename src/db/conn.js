@@ -1,12 +1,28 @@
-const mongoose = require('mongooose');
-require("../src/db/conn");
+const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://127.0.0.1:27017/pickle" , {
-    useCreateIndex:true,
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-}).then(() => {
-    console.log("connection sucessful");
-}).catch((e) => {
-    console.log("Trying to Connect but Failed")
-})
+
+
+const conn = async() => {
+ 
+    try {
+         
+        await mongoose.connect("mongodb+srv://anishmainali31:18dec@cluster0.vtm5dho.mongodb.net/Aachar").then(
+            () => {
+            console.log("Connected");
+        },
+        (error) => {
+            console.log(error);
+          }
+        );
+
+
+    } catch (error) {
+        console.log(error);
+    }
+
+
+
+}
+
+
+conn();
